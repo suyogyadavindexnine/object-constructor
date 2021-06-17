@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Constructor</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Object Constructor</h1>
+    <script>
+        function Book(title,author,no,read) {
+            this.title = title;
+            this.author = author;
+            this.no = no;
+            this.read = read;
+            this.info = function () {
+                let tempread="not read yet";
+                if (read) {
+                    tempread = "already read"
+                }
+                return this.title+" by "+this.author+", "+this.no+" pages, "+tempread;
+            }
+        }
+        const hobbit = new Book("The Hobbit","J.R.R Tolkien",295,false);
+        console.log(hobbit.info());
+        const intelligentInvestor = new Book("The Intelligent Investor","Benjamin Graham",641,false);
+        console.log(intelligentInvestor.info());
+    </script>
+</body>
+</html>
